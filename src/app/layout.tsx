@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidenav from "@/components/Sidenav";
+import { X } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full flex">
+        <div className="w-full flex bg-gray-100">
           <Sidenav />
-          <main className="w-[92%] min-h-screen bg-white max-h-screen overflow-scroll p-10">
+          <main className="w-[92%] min-h-screen bg-white relative max-h-screen overflow-scroll p-10">
+            <button className="absolute top-10 right-10 text-black">
+              <X />
+            </button>
+
             {children}
           </main>
         </div>
